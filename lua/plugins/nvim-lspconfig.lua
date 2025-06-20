@@ -6,7 +6,8 @@ return {
   opts = {
     servers = {
       lua_ls = {},
-      gopls = {}
+      gopls = {},
+      rust_analyzer = {}
     },
   },
   config = function(_, opts)

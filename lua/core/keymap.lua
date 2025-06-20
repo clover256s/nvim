@@ -3,12 +3,8 @@ vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gh", "^", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gl", "$", { noremap = true, silent = true })
 
-local n = true -- this would be your condition variable
-vim.keymap.set("n", "<leader>e", function()
-    if n then
-        vim.cmd("Neotree reveal")
-    else
-        vim.cmd("Neotree close")
-    end
-    n = not n -- toggle the state for next press
-end)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
