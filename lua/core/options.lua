@@ -8,5 +8,3 @@ vim.wo.number = true
 vim.o.relativenumber = true
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
-
-vim.cmd.colorscheme("kanagawa-paper-ink")

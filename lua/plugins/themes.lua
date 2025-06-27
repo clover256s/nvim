@@ -1,83 +1,8 @@
 return {
   {
-    "thesimonho/kanagawa-paper.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
+    "Mofiqul/dracula.nvim",
     config = function()
-      require("kanagawa-paper").setup({
-        -- 为下划线文本启用下划线弯曲效果
-        undercurl = true,
-        -- 透明背景
-        transparent = false,
-        -- 左侧装订线的高亮背景
-        gutter = true,
-        -- 诊断虚拟文本的背景
-        diag_background = true,
-        -- 非活动窗口变暗（透明背景时禁用）
-        dim_inactive = false,
-        -- 为终端缓冲区设置颜色
-        terminal_colors = true,
-        -- 缓存高亮和颜色以加快启动速度
-        -- 详见 Cache 部分说明
-        cache = false,
-
-        styles = {
-          -- 注释样式
-          comment = { italic = true },
-          -- 函数样式
-          functions = { italic = false },
-          -- 关键字样式
-          keyword = { italic = false, bold = false },
-          -- 语句样式
-          statement = { italic = false, bold = false },
-          -- 类型样式
-          type = { italic = false },
-        },
-
-        -- 覆盖默认调色板和主题颜色
-        colors = {
-          palette = {},
-          theme = {
-            ink = {},    -- 墨水色（文字/前景）
-            canvas = {}, -- 画布色（背景）
-          },
-        },
-
-        -- 调整每个主题的整体色彩平衡 [-1, 1]
-        color_offset = {
-          ink = { brightness = 0, saturation = 0 },    -- 文字亮度/饱和度偏移
-          canvas = { brightness = 0, saturation = 0 }, -- 背景亮度/饱和度偏移
-        },
-
-        -- 覆盖高亮组
-        overrides = function(colors)
-          return {}
-        end,
-
-        -- 如果已安装 lazy.nvim，自动启用所需插件
-        auto_plugins = true,
-        -- 为所有插件启用高亮（使用 lazy.nvim 时自动禁用）
-        all_plugins = package.loaded.lazy == nil,
-        -- 手动启用/禁用特定插件
-        -- 插件名称请查看 `groups/plugins` 目录
-        plugins = {
-          -- 示例：
-          rainbow_delimiters = true, -- 彩虹分隔线
-          which_key = false          -- which-key 插件
-        },
-
-        -- 与其他应用的集成配置
-        integrations = {
-          -- 自动同步 WezTerm 主题与当前 Neovim 主题
-          wezterm = {
-            enabled = false, -- 是否启用
-            -- Neovim 会将主题名称写入此文件
-            -- WezTerm 通过读取该文件匹配主题
-            path = (os.getenv("TEMP") or "/tmp") .. "/nvim-theme",
-          },
-        },
-      })
+      vim.cmd [[colorscheme dracula]]
     end
-  }
+  },
 }
